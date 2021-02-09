@@ -17,7 +17,7 @@ class Graph:
     def data_gen(self):
         t = self.t
         cnt = 0
-        while cnt < 1000:
+        while cnt < 1000000:
             cnt+=1
             t += 0.05
 
