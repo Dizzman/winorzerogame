@@ -11,13 +11,16 @@ class GameTable:
 
 
     def Comare(self,a:Coin,b:Coin):
-        if a.getSide()>b.getSide():
-            self.scorea=self.scorea+0.01
-        elif a.getSide()<b.getSide():
-            self.scoreb=self.scoreb+0.01
+        aa=a.getSide()
+        bb=b.getSide()
+        if aa>bb:
+            self.scorea=self.scorea+0.05
+        elif aa<bb:
+            self.scoreb=self.scoreb+0.05
         else:
-            self.scorea = self.scorea - 0.01
-            self.scoreb = self.scoreb - 0.01
+
+            self.scorea = self.scorea - 0.5
+            self.scoreb = self.scoreb - 0.5
 
     def getscores_a(self):
         return  self.scorea
