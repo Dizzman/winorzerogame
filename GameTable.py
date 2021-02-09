@@ -1,7 +1,7 @@
 import numpy
 class Coin:
-    def GetSide(self):
-        return numpy.random.randint(0,2)
+    def getSide(self):
+        return numpy.random.randint(0,20)
 
 
 class GameTable:
@@ -9,18 +9,22 @@ class GameTable:
         self.scorea=0
         self.scoreb=0
 
-    @classmethod
+
     def Comare(self,a:Coin,b:Coin):
         if a.getSide()>b.getSide():
-            self.scorea=self.scorea+1
+            self.scorea=self.scorea+0.01
         elif a.getSide()<b.getSide():
-            self.scoreb=self.scoreb+1
+            self.scoreb=self.scoreb+0.01
         else:
-            self.scoreb = self.scoreb + 100
-            self.scoreb = self.scoreb + 100
+            self.scorea = self.scorea - 0.01
+            self.scoreb = self.scoreb - 0.01
 
     def getscores_a(self):
         return  self.scorea
 
     def getscores_b(self):
         return  self.scoreb
+
+    def resetGame(self):
+        self.scorea = 0
+        self.scoreb = 0
