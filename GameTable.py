@@ -1,7 +1,7 @@
 import numpy
 class Coin:
     def getSide(self):
-        return numpy.random.randint(0,20)
+        return numpy.random.randint(0,100)
 
 
 class GameTable:
@@ -14,13 +14,15 @@ class GameTable:
         aa=a.getSide()
         bb=b.getSide()
         if aa>bb:
-            self.scorea=self.scorea+0.05
+            self.scorea=self.scorea+0.01
+            self.scoreb = self.scoreb - 0.015
         elif aa<bb:
-            self.scoreb=self.scoreb+0.05
+            self.scoreb=self.scoreb+0.01
+            self.scorea = self.scorea - 0.015
         else:
 
-            self.scorea = self.scorea - 0.5
-            self.scoreb = self.scoreb - 0.5
+            self.scorea = self.scorea + 0.15
+            self.scoreb = self.scoreb + 0.15
 
     def getscores_a(self):
         return  self.scorea
