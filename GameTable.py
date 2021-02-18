@@ -15,14 +15,12 @@ class GameTable:
         self.aa = a.getSide()
         self.bb = b.getSide()
         if self.aa > self.bb:
-            self.scorea = self.scorea + 0.01
-            self.scoreb = self.scoreb - 0.015
+            self.scorea = self.scorea + 1
+            self.scoreb = self.scoreb
         elif self.aa < self.bb:
-            self.scoreb = self.scoreb + 0.01
-            self.scorea = self.scorea - 0.015
-        else:
-            self.scorea = self.scorea + 0.415
-            self.scoreb = self.scoreb + 0.415
+            self.scoreb = self.scoreb + 1
+            self.scorea = self.scorea
+
 
     def getscores_a(self):
         return self.scorea
